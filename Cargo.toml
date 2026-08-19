@@ -1,7 +1,7 @@
 [package]
 description = "Primary MetaAccount implementation for XION network"
 edition     = "2021"
-license     = "Apache-2.0"
+license     = "MIT"
 name        = "xion-account"
 version     = "0.1.1"
 
