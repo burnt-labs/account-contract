@@ -14,21 +14,30 @@ crate-type = ["cdylib", "rlib"]
 library = []
 
 [dependencies]
-base64           = { workspace = true }
-bech32           = { workspace = true }
-cosmos-sdk-proto = { workspace = true }
-cosmwasm-schema  = { workspace = true }
-cosmwasm-std     = { workspace = true }
-cw-storage-plus  = { workspace = true }
-cw2              = { workspace = true }
-getrandom        = { workspace = true }
-hex              = { workspace = true }
-p256             = { workspace = true }
-ripemd           = { workspace = true }
-rsa              = { workspace = true }
-schemars         = { workspace = true }
-serde            = { workspace = true }
-serde_json       = { workspace = true }
-sha2             = { workspace = true }
-thiserror        = { workspace = true }
-tiny-keccak      = { workspace = true }
+base64           = "0.21.4"
+bech32           = "0.9.1"
+cosmos-sdk-proto = { package = "xion-cosmos-sdk-proto", version = "0.26.1", default-features = false, features = [
+  "std",
+  "cosmwasm",
+  "xion",
+  "serde",
+] }
+cosmwasm-schema  = "2.2.2"
+cosmwasm-std     = { version = "2.2.2", features = ["stargate", "cosmwasm_2_1"] }
+cw-storage-plus  = "2.0.0"
+cw2              = "2.0.0"
+getrandom        = { version = "0.2.10", features = ["custom"] }
+hex              = "0.4"
+p256             = { version = "0.13.2", features = ["ecdsa-core", "arithmetic", "serde"] }
+ripemd           = "0.1.3"
+rsa              = { version = "0.9.10" }
+schemars         = "0.8.10"
+serde            = { version = "1.0.203", default-features = false, features = ["derive"] }
+serde_json       = "1.0.87"
+sha2             = { version = "0.10.8", features = ["oid"] }
+thiserror        = "1"
+tiny-keccak      = { version = "2", features = ["keccak"] }
+
+[profile.release]
+opt-level       = 3
+overflow-checks = true
