@@ -90,8 +90,8 @@ behave according to their role.
 
 Accordingly, the cap does not apply when a flaw lets an attacker who starts
 without that privilege obtain it or bypass its authorization check, or lets a
-legitimately held limited role perform actions outside its intended
-permissions. Those findings are assessed by demonstrated impact. Consistent
+legitimately held limited role exercise authority that role was not granted.
+Those findings are assessed by demonstrated impact. Consistent
 with Responsible Disclosure, this policy does not authorize researchers to test
 with production privileges they do not legitimately control, or to exercise
 production privileges they do control.
