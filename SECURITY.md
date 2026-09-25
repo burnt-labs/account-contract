@@ -5,7 +5,8 @@ This repository holds the XION account contract — the **Account** asset in the
 This policy is built from that program's terms.
 [`burnt-labs/bug-bounty`](https://github.com/burnt-labs/bug-bounty) remains the
 canonical source — where this file and the program documents differ, the
-program documents govern.
+program documents govern. The repository-specific explanations below describe
+how those governing terms are applied here; they do not change them.
 
 ## Reporting a Vulnerability
 
@@ -27,7 +28,9 @@ impact, how an attacker would exploit it, and any known mitigations.
 We acknowledge receipt within **5 business days** and provide a triage decision
 within **14 days**. Active exploitation, or confirmed attacker awareness of an
 unpatched vulnerability, escalates the issue to Critical handling regardless of
-its original classification.
+its original classification. For this repository, that escalation changes
+response handling — prioritization, coordination, and disclosure timing — and
+does not itself change severity assessment or reward eligibility.
 
 ## Scope
 
@@ -65,7 +68,9 @@ The proof of concept should run against a **locally running XION node
 configured with mainnet parameters**, using the governance-deployed contract
 bytecode, the XION ante handler chain, and module configuration matching
 mainnet. The attack should be executed via standard transaction broadcast
-against that node.
+against that node. For reports against this contract, show inclusion in a
+block, the successful execution result, and the resulting state change or
+security impact; broadcast acceptance alone is not sufficient.
 
 ## Permissioned Chain Policy
 
@@ -82,6 +87,14 @@ Attacks requiring a contract admin, governance, or another privileged party to
 take self-destructive or colluding action are classified at **Medium at most**,
 regardless of downstream impact. The threat model assumes privileged actors
 behave according to their role.
+
+Accordingly, the cap does not apply when a flaw lets an attacker who starts
+without that privilege obtain it or bypass its authorization check, or lets a
+legitimately held limited role perform actions outside its intended
+permissions. Those findings are assessed by demonstrated impact. Consistent
+with Responsible Disclosure, this policy does not authorize researchers to test
+with production privileges they do not legitimately control, or to exercise
+production privileges they do control.
 
 ## Out of Scope
 
