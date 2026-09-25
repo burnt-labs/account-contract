@@ -26,10 +26,8 @@ impact, how an attacker would exploit it, and any known mitigations.
 
 We acknowledge receipt within **5 business days** and provide a triage decision
 within **14 days**. Active exploitation, or confirmed attacker awareness of an
-unpatched vulnerability, escalates the issue to Critical **response handling**
-— prioritization, coordination, and disclosure timing — regardless of its
-original classification. That escalation does not change the finding's
-severity assessment or reward eligibility.
+unpatched vulnerability, escalates the issue to Critical handling regardless of
+its original classification.
 
 ## Scope
 
@@ -67,9 +65,7 @@ The proof of concept should run against a **locally running XION node
 configured with mainnet parameters**, using the governance-deployed contract
 bytecode, the XION ante handler chain, and module configuration matching
 mainnet. The attack should be executed via standard transaction broadcast
-against that node. Show inclusion in a block, the successful execution result,
-and the resulting state change or security impact; broadcast acceptance alone
-is not sufficient.
+against that node.
 
 ## Permissioned Chain Policy
 
@@ -82,18 +78,10 @@ exploitable using only contracts already deployed on mainnet.
 
 ## Privileged Actor Policy
 
-Findings are classified at **Medium at most** when the attack must begin with
-control of a contract administrator, governance, or another privileged role —
-or requires that holder to cooperate — and the demonstrated impact depends on
-that holder acting self-destructively, outside normal operation, or in collusion
-while using authority the role already has.
-
-The cap does not apply when a flaw lets an attacker who starts without that
-privilege obtain it or bypass its authorization check, or lets a legitimately
-held limited role perform actions outside its intended permissions. Those
-findings are assessed by demonstrated impact. This policy does not authorize
-researchers to acquire or exercise production privileges they do not
-legitimately control, or to test with production privileges they do control.
+Attacks requiring a contract admin, governance, or another privileged party to
+take self-destructive or colluding action are classified at **Medium at most**,
+regardless of downstream impact. The threat model assumes privileged actors
+behave according to their role.
 
 ## Out of Scope
 
