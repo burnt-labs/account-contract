@@ -83,12 +83,13 @@ exploitable using only contracts already deployed on mainnet.
 
 ## Privileged Actor Policy
 
-Attacks requiring a contract admin, governance, or another privileged party to
-take self-destructive or colluding action are classified at **Medium at most**,
-regardless of downstream impact. The threat model assumes privileged actors
-behave according to their role.
+Findings are classified at **Medium at most** when the attack must begin with
+control of a contract administrator, governance, or another privileged role —
+or requires that holder to cooperate — and the demonstrated impact depends on
+that holder acting self-destructively, outside normal operation, or in collusion
+while using authority the role already has.
 
-Accordingly, the cap does not apply when a flaw lets an attacker who starts
+The cap does not apply when a flaw lets an attacker who starts
 without that privilege obtain it or bypass its authorization check, or lets a
 legitimately held limited role exercise authority that role was not granted.
 Those findings are assessed by demonstrated impact. Consistent
