@@ -49,7 +49,7 @@ contract version before submitting.
 | **MEDIUM**   | Limited fund loss requiring specific preconditions. Privileged-party cooperation where the demonstrated impact uses authority the role already has (see Privileged Actor Policy). Temporary disruption recoverable by governance |
 | **LOW**      | Valid, reproducible code-level issue with no direct risk to funds, representing a meaningful hardening opportunity. Must include a specific code reference                                                                                                                                                       |
 
-Only **High** and **Critical** findings are reward eligible. Collecting a
+**Critical**, **High**, **Medium**, and **Low** findings are all reward eligible. Collecting a
 bounty requires completing a KYC process; we cannot pay reporters in
 sanctioned jurisdictions. Where several reports describe the same underlying
 issue, the first complete report with a working proof of concept is the one
@@ -69,8 +69,11 @@ configured with mainnet parameters**, using the governance-deployed contract
 bytecode, the XION ante handler chain, and module configuration matching
 mainnet. The attack should be executed via standard transaction broadcast
 against that node. For reports against this contract, show inclusion in a
-block, the successful execution result, and the resulting state change or
-security impact; broadcast acceptance alone is not sufficient.
+block, the execution result, and the resulting state change or security
+impact; broadcast acceptance alone is not sufficient. When transaction
+failure is itself the claimed disruption, a nonzero execution result is
+acceptable, but the proof must show the included failing transaction and
+its observable impact on otherwise valid contract operations.
 
 ## Permissioned Chain Policy
 
