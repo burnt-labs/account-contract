@@ -21,12 +21,14 @@ struct Claims {
 }
 
 #[cw_serde]
+#[allow(dead_code)]
 struct PrivateClaims {
     key: String,
     value: String,
 }
 #[cw_serde]
 #[allow(non_snake_case)]
+#[allow(dead_code)]
 struct QueryValidateJWTResponse {
     privateClaims: Vec<PrivateClaims>,
 }

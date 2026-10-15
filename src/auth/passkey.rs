@@ -11,6 +11,7 @@ use cosmwasm_schema::cw_serde;
 use cosmwasm_std::{Addr, Binary, Deps};
 
 #[cw_serde]
+#[allow(dead_code)]
 struct QueryRegisterRequest {
     addr: String,
     challenge: String,
@@ -19,11 +20,13 @@ struct QueryRegisterRequest {
 }
 
 #[cw_serde]
+#[allow(dead_code)]
 struct QueryRegisterResponse {
     credential: Binary,
 }
 
 #[cw_serde]
+#[allow(dead_code)]
 struct QueryAuthenticateResponse {}
 
 pub fn register(deps: Deps, addr: Addr, rp: String, data: Binary) -> ContractResult<Binary> {
@@ -44,6 +47,7 @@ pub fn register(deps: Deps, addr: Addr, rp: String, data: Binary) -> ContractRes
 }
 
 #[cw_serde]
+#[allow(dead_code)]
 struct QueryVerifyRequest {
     addr: String,
     challenge: String,
